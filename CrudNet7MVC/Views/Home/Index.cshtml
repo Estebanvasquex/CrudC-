@@ -7,7 +7,7 @@
 <h1 class="text-center">Contacto con .Net 7</h1>
 <div class="row">
     <div class="offet-9 col-3 mb-3">
-        <a asp-action="Crear" asp-controller="Inicio" class="btn btn-secondary d-block mx-auto btn-lg">
+        <a asp-action="Crear" asp-controller="Home" class="btn btn-secondary d-block mx-auto btn-lg">
             <i class="bi bi-file-plus-fill"></i>  Nuevo usuario
         </a>
 
@@ -50,9 +50,13 @@
                                         <th> @Html.DisplayFor(m => item.telefono)</th>
                                         <th> @Html.DisplayFor(m => item.celular)</th>
                                         <th> @Html.DisplayFor(m => item.email)</th>
-                                        <th class="btn btn-warning" asp-action="Editar" asp-route-id="@item.id"><i class="bi bi-pencil-fill"></i>Editar</th>
-                                        <th class="btn btn-secondary" asp-action="Detalle" asp-route-id="@item.id"><i class="bi bi-info-circle-fill"></i>Detalle</th>
-                                        <th class="btn btn-danger" asp-action="Borrar" asp-route-id="@item.id"><i class="bi bi-eraser-fill"></i>Borrar</th>
+                                        <th>
+                                            <a class="btn btn-warning" asp-action="Editar" asp-route-id="@item.id"><i class="bi bi-pencil-fill"></i>Editar</a>
+                                            <a class="btn btn-secondary" asp-action="Detalle" asp-route-id="@item.id"><i class="bi bi-info-circle-fill"></i>Detalle</a>
+                                            <a class="btn btn-danger" asp-action="Borrar" asp-route-id="@item.id"><i class="bi bi-eraser-fill"></i>Borrar</a>
+
+                                        </th>
+                 
                                     </tr>
                                     
                                 }
@@ -76,3 +80,36 @@
 
     </div>
 </div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            //llamar a datatable
+            $('#tblUsuarios').DataTable({
+                languge: {
+                    "decimal": "",
+                    "emptyTable": "No hay información",
+                    "info": "Mostrando _START_ a END de TOTAL Entradas",
+                    "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                    "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Mostrar _MENU Entradas",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "zeroRecords": "Sin resultados encontrados",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Ultimo",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+
+                    }
+
+                }
+            });
+        });
+
+    </script>
+}

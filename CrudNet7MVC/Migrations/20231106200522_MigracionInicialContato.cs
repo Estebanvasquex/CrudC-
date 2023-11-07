@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CrudNet7MVC.Migrations
 {
     /// <inheritdoc />
-    public partial class MigracionInicialContacto : Migration
+    public partial class MigracionInicialContato : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

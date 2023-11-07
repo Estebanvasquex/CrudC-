@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrudNet7MVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231101204357_MigracionInicialContacto")]
-    partial class MigracionInicialContacto
+    [Migration("20231106200522_MigracionInicialContato")]
+    partial class MigracionInicialContato
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
